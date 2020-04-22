@@ -55,6 +55,24 @@
 		</dependency>
 	</dependencies>
 
+	<repositories>
+		<repository>
+			<id>utils-release-local</id>
+			<url>${myMavenRepo.read.url}</url>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>utils-release-local</id>
+			<url>${myMavenRepo.write.url}</url>
+		</repository>
+		<snapshotRepository>
+			<id>utils-release-local</id>
+			<url>${myMavenRepo.write.url}</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
