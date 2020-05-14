@@ -1,19 +1,28 @@
 package com.service.loginService.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "user_creds")
+@Table(name = "users")
 public class User {
+
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
     private boolean active;
     private String username;
     private String password;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
+    private List<UserRole> userRole;
 
-    public int getId() {
-        return id;
+    public List<UserRole> getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(List<UserRole> userRole) {
+        this.userRole = userRole;
     }
 
     public boolean isActive() {
@@ -26,10 +35,6 @@ public class User {
 
     public String getPassword() {
         return password;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setActive(boolean active) {

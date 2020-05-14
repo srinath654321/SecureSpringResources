@@ -37,6 +37,12 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -55,22 +61,29 @@
 		</dependency>
 	</dependencies>
 
-	<repositories>
-		<repository>
-			<id>utils-release-local</id>
-			<url>${myMavenRepo.read.url}</url>
-		</repository>
-	</repositories>
+<!--	<repositories>-->
+<!--		<repository>-->
+<!--			<id>utils-release-local</id>-->
+<!--			<url>${myMavenRepo.read.url}</url>-->
+<!--		</repository>-->
+<!--	</repositories>-->
+
+<!--	<distributionManagement>-->
+<!--		<repository>-->
+<!--			<id>utils-release-local</id>-->
+<!--			<url>${myMavenRepo.write.url}</url>-->
+<!--		</repository>-->
+<!--		<snapshotRepository>-->
+<!--			<id>utils-release-local</id>-->
+<!--			<url>${myMavenRepo.write.url}</url>-->
+<!--		</snapshotRepository>-->
+<!--	</distributionManagement>-->
 
 	<distributionManagement>
 		<repository>
-			<id>utils-release-local</id>
-			<url>${myMavenRepo.write.url}</url>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/srinath654321</url>
 		</repository>
-		<snapshotRepository>
-			<id>utils-release-local</id>
-			<url>${myMavenRepo.write.url}</url>
-		</snapshotRepository>
 	</distributionManagement>
 
 	<build>
