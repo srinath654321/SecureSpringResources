@@ -22,7 +22,9 @@ jobs:
         java-version: 1.8
     - name: echo secret
       run: echo start maven build
-    - name: Build with Maven
+    - name: mvn build
+      run: mvn clean install
+    - name: Deploy with Maven
       env:
         GITHUB_TOKEN: ${{secrets.MY_SECRET}}
       run: mvn deploy -Dregistry=https://maven.pkg.github.com/srinath654321 -DskipTests
