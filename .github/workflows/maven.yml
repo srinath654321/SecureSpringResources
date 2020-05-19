@@ -20,11 +20,11 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: echo secret
-      run: echo start maven build
-    - name: mvn build
-      run: mvn clean install -DskipTests
-    - name: Deploy with Maven
+    - name: Deploy to Github Package Registry
       env:
-        GITHUB_TOKEN: ${{secrets.MY_SECRET}}
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/srinath654321 -DskipTests
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+          mkdir -p ~/.m2
+          echo "<settings><servers><server><id>gh</id><username>$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $1}')</username><password>\${env.GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
+          REPO="gh::default::https://maven.pkg.github.com/${GITHUB_REPOSITORY}"
+          mvn deploy -DskipTests -DaltReleaseDeploymentRepository="${REPO}" -DaltSnapshotDeploymentRepository="${REPO}"
