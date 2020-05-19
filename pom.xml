@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.service</groupId>
 	<artifactId>loginService</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>loginService</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -79,12 +79,12 @@
 <!--		</snapshotRepository>-->
 <!--	</distributionManagement>-->
 
-	<distributionManagement>
-		<repository>
-			<id>github</id>
-			<url>https://maven.pkg.github.com/srinath654321</url>
-		</repository>
-	</distributionManagement>
+<!--	<distributionManagement>-->
+<!--		<repository>-->
+<!--			<id>github</id>-->
+<!--			<url>https://maven.pkg.github.com/srinath654321</url>-->
+<!--		</repository>-->
+<!--	</distributionManagement>-->
 
 	<build>
 		<plugins>
