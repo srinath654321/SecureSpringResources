@@ -21,4 +21,4 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn -B package --file pom.xml -DskipTests
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/srinath654321 -Dtoken=0b1bf7c103ce86bef3a66b95b789e67099f5d01a -DskipTests
