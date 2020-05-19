@@ -23,7 +23,7 @@ jobs:
     - name: echo secret
       run: echo start maven build
     - name: mvn build
-      run: mvn clean install
+      run: mvn clean install -DskipTests
     - name: Deploy with Maven
       env:
         GITHUB_TOKEN: ${{secrets.MY_SECRET}}
