@@ -3,10 +3,15 @@ package com.service.loginService.model;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ *
+ * CASCADING is important when we work with entity classes have child entity classes dependency
+ *
+ */
+
 @Entity
 @Table(name = "users")
 public class User {
-
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
